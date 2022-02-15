@@ -1,0 +1,19 @@
+<center>
+<table>
+<br>
+<strong>Name:</strong>
+<%= @employee.name %>
+</p>
+<p>
+<strong>Department:</strong>
+<%= @employee.department %>
+</p>
+<strong>Salary:</strong>
+<%= @employee.salary %>
+</p>
+<%= image_tag @employee.main_image, width: '500' if @employee.main_image.present? %>
+<br>
+<br>
+<%= link_to 'Back', :back %>
+</table>
+</center>

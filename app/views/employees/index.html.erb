@@ -1,0 +1,57 @@
+<h1 style="width:200px; margin:10px auto; padding:10px; text-align:center; background:grey; color:black;" >Employees list</h1>
+<br>
+<center>
+<div>
+<%= form_with url: employees_path, method: 'get' do |f| %>
+  Search(form_with):
+  <%= f.text_field :q, value: params[:q] ,placeholder:'Search employee by emp_name' %>
+  <%= f.submit "search" %>
+  <%= link_to "clear", employees_path %>
+  <% end %>
+  </div>
+  <br>
+
+  <div>
+<%= form_tag employees_path, method: 'get' do %>
+Search(form_tag):
+<%= text_field_tag 'q' , params[:q] , placeholder: 'Search employee by emp_name' %>
+<%= submit_tag "search" %>
+<%= link_to "clear", employees_path %>
+<% end %>
+</div>
+</center>
+<br>
+<center>
+<table border="5" bordercolor=black; background:grey ; color:black >
+<div style="text-align:center">
+<thead style="text-align:center">
+
+<th>Name</th>
+<th>Depatment</th>
+<th>Salary</th>
+
+</thead>
+<% @employees.each do |employee| %>
+<tr style="text-align:center">
+<td><%= employee.name %> </td>
+
+
+<td><%= employee.department %></td>
+<td><%= employee.salary %></td>
+
+<td><%= link_to "show", employee_path(employee) %></td>
+<td><%= link_to "Edit", edit_employee_path(employee) %></td>
+<td><%= link_to "delete", employee_path(employee), method: :delete, data: { confirm: "are u sure"} %></td>
+<td><%= link_to "download pdf", download_pdf_employee_path(employee) %></td>
+
+</td>
+</tr>
+
+<% end %>
+</div>
+</table>
+<br>
+
+
+<%= link_to "New Employee",new_employee_path %>
+</center>

@@ -1,0 +1,12 @@
+<h1>Hi</h1>
+<p>
+there is a new employee created <br>
+</p>
+<p>
+Name: <%= @employee.name %><br>
+Depatment: <%= @employee.department %><br>
+Salary: <%= @employee.salary %><br>
+CreatedAt: <%= @employee.created_at %> <br>
+To view the full employee details: <%= link_to "click here" , employee_url(@employee) %>
+</p>
+<p> have a great day </p> 
