@@ -26,6 +26,16 @@ class EmployeesController < ApplicationController
         def edit
         
         end
+
+      def aboutus
+      end
+
+      def contact
+      end
+
+      def home
+      end
+
         def update
         
         if @employee.update(employee_params)
@@ -35,7 +45,6 @@ class EmployeesController < ApplicationController
         end
         end
         def destroy
-        
         @employee.destroy
         redirect_to employees_path
         end

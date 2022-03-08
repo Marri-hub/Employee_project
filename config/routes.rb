@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :offices
-  
+  get 'employees/home'
+  get 'employees/aboutus'
+  get 'employees/contact'
   # devise_for :users
-  root to: "employees#index"
+  root to: "employees#home"
   resources :employees do 
     member do
       get 'download_pdf'

@@ -1,9 +1,9 @@
-<h1 style="width:200px; margin:10px auto; padding:10px; text-align:center; background:grey; color:black;" >Employees list</h1>
+<h3 style="width:180px; margin:10px auto; padding:10px; text-align:center; background:white; color:black;" >Employees list</h3>
 <br>
 <center>
 <div>
 <%= form_with url: employees_path, method: 'get' do |f| %>
-  Search(form_with):
+  Search:
   <%= f.text_field :q, value: params[:q] ,placeholder:'Search employee by emp_name' %>
   <%= f.submit "search" %>
   <%= link_to "clear", employees_path %>
@@ -11,14 +11,7 @@
   </div>
   <br>
 
-  <div>
-<%= form_tag employees_path, method: 'get' do %>
-Search(form_tag):
-<%= text_field_tag 'q' , params[:q] , placeholder: 'Search employee by emp_name' %>
-<%= submit_tag "search" %>
-<%= link_to "clear", employees_path %>
-<% end %>
-</div>
+  
 </center>
 <br>
 <center>
@@ -55,3 +48,11 @@ Search(form_tag):
 
 <%= link_to "New Employee",new_employee_path %>
 </center>
+<%= nav_bar fixed: :top, brand: "OSI DIGITAL" do %>
+    <%= menu_group do %>
+        <%= menu_item "Home", employees_home_path %>
+        <%= menu_item "About Us", employees_aboutus_path %>
+        <%= menu_item "Contact", employees_contact_path %>
+        <%= menu_item "Employee Information", employees_path %>
+    <% end %>
+    <% end %>
