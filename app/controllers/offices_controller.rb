@@ -51,7 +51,6 @@ class OfficesController < ApplicationController
   # DELETE /offices/1 or /offices/1.json
   def destroy
     @office.destroy
-
     respond_to do |format|
       format.html { redirect_to offices_url, notice: "Office was successfully destroyed." }
       format.json { head :no_content }
