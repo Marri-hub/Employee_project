@@ -1,42 +1,67 @@
 <%= form_for @employee do |f| %>
-    <% if @employee.errors.any? %>
+
+<% if @employee.errors.any? %>
+
 <div id="error_explanation" >
+
 <h2>
+
 <%= pluralize(@employee.errors.count, "error") %>
+
 prohibited this employee from being saved:
+
 </h2>
+
 <ul>
+
 <% @employee.errors.full_messages.each do |message| %>
+
 <li>
+
 <%= message %>
+
 <% end %>
+
 </ul>
 
 </div>
+
+
+
 <% end %>
-    <div>
+    <div style="text-align:center">
     <%= f.label :name %>
     <%= f.text_field :name %>
     </div>
     <br>
+    <br>
     <div>
-    <%= f.label :department %>
-    <%= f.text_field :department %>
+  <%= f.label :department %>
+    <%= f.select :department, [['Ruby','ruby'],['Java','java'],['Dotnet','dotnet'], ['Testing','testing']] %>   
     </div>
+    <br>
+    
     <br>
     <div>
     <%= f.label :salary %>
     <%= f.number_field :salary %>
     </div>
 <br>
+<br>
     <div>
-    <%= f.label :main_image %>
-    <%= f.file_field :main_image %>
+    <%= f.label :upload_image %>
+    <%= f.file_field :upload_image %>
     </div>
 <br>
     <div>
     <%= f.submit %>
+   
     </div>
-    <% end %>
+   
     <br>
     <%= link_to "back", employees_path %>
+    <% end %>
+
+    <div class="col-lg-1">
+<img src = "https://osidigital.com/wp-content/uploads/2018/08/osi_logo_rgb.png" style="width:200px;height:80px;">
+</div>

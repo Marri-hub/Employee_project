@@ -1,0 +1,29 @@
+Date of extract: 
+<%= Date.today %>
+<br>
+
+Employees count:
+<%= @employees.count %>
+<br>
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <%= content_tag :tr, id: dom_id(employee), class: dom_class(employee) do %>
+        <td><%= employee.name %></td>
+        <td><%= employee.department %></td>
+        <td><%= employee.salary %></td>
+      <% end %>
+    <% end %>
+    <div class="col-lg-1">
+<img src = "https://osidigital.com/wp-content/uploads/2018/08/osi_logo_rgb.png" style="width:200px;height:80px;">
+</div>
+  </tbody>
+</table> 

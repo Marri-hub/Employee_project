@@ -2,8 +2,21 @@
     <%= menu_group do %>
         <%= menu_item "Home", employees_home_path %>
         <%= menu_item "About Us", employees_aboutus_path %>
-        <%= menu_item "Contact", employees_contact_path %>
+       
         <%= menu_item "Employee Information", employees_path %>
+<h4>
+        <div style= "padding-left:900px; padding-top:0px; ">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+<a href="https://twitter.com/osi_digital" class="fa fa-twitter"></a> 
+<a href="https://www.facebook.com/osidigital/" class="fa fa-facebook"></a>
+
+</div>
+</h4>
+
+        <div style= "padding-left:820px; padding-top:0px;">
+        <%= menu_item  current_user.email %>
+   </div>
     <% end %>
     <% end %>
 

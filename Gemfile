@@ -2,13 +2,10 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
+gem 'wicked_pdf'
+gem "wkhtmltopdf-binary", group: :development
+gem "wkhtmltopdf-heroku", group: :production
 
-gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
-gem 'omniauth-github'
-gem "omniauth-rails_csrf_protection"
-gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # Use sqlite3 as the database for Active Record
@@ -35,6 +32,12 @@ gem 'mini_magick'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+
+gem "twitter-bootstrap-rails"
+gem 'omniauth-github'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-facebook'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

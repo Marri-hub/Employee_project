@@ -1,0 +1,23 @@
+<br>
+<br>
+
+<%= nav_bar do %>
+<center>
+   <h3> Now you are logging in as </h3>
+<br>
+
+<h4>
+<%= current_user.email %>
+</h4>
+
+</center>
+<% end %>
+<br>
+<br>
+<center>
+<h5>
+<strong>
+<%= link_to "continue >>>", employees_home_path %>
+</strong>
+</h5>
+</center>

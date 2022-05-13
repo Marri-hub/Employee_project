@@ -5,14 +5,42 @@ class EmployeesController < ApplicationController
           Employee.where(name: params[:q])
           else 
         Employee.all
+    end
+  end
+
+      def jagadeesh
+        @employees = Employee.all.order(created_at: :desc)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Posts",
+               page_size: "A4",
+               template: "employees/employee.pdf.erb"
       end
     end
+
+  end
+    
+    
+
+        def show    
+          @employee = Employee.find(params[:id])
+          respond_to do |format|
+            format.html
+            format.pdf do
+              render pdf: "Posts",
+                     page_size: "A4",
+                     template: "employees/show.pdf.erb"
+            end
+          end
+    end
+
 
         def show     
         end
 
         def new
-        @employee=Employee.new
+          @employee =  Employee.new
         end
 
         def create
@@ -54,11 +82,17 @@ class EmployeesController < ApplicationController
             send_file("#{Rails.root}/public/sample.pdf",
             filename: "#{@employee.name}.pdf", 
             type: "application/pdf")
+
+            
+            end
+
+
+        
              end
 
         private
         def employee_params
-        params.require(:employee).permit(:name,:department, :salary, :main_image)
+        params.require(:employee).permit(:name,:department, :salary, :upload_image)
         end
         
         def load_filters

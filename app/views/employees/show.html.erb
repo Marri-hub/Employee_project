@@ -11,9 +11,9 @@
 <strong>Salary:</strong>
 <%= @employee.salary %>
 </p>
-<%= image_tag @employee.main_image, width: '500' if @employee.main_image.present? %>
+ <%= image_tag @employee.upload_image, width: '500' if @employee.upload_image.present? %> 
 <br>
 <br>
-<%= link_to 'Back', :back %>
+ <%= link_to 'Back', :back %> 
 </table>
 </center>
