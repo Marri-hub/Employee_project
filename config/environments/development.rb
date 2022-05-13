@@ -84,15 +84,14 @@ config.action_mailer.delivery_method = :letter_opener
 #   config.action_mailer.perform_deliveries =true
 #   config.action_mailer.raise_delivery_errors =true
 #   config.action_mailer.default :charset =>"utf-8"
-#   config.action_mailer.default :from =>"\"dummy\"<dummy@gmail.com>"
+#   config.action_mailer.default :from =>"saijagadeesh9703@gmail.com"
 #   config.action_mailer.smtp_settings = {
 #     :address =>"smtp.gmail.com",
 #     :port =>587,:domain =>'gmail.com',
 #     :user_name =>"saijagadeesh9703@gmail.com",
 #     :password =>"Amma@223366",
 #     :authentication => :login,
-#     :enable_starttls_auto =>true,
-           
+#     :enable_starttls_auto =>true,        
 # }
 
 

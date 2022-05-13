@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get 'employees/home'
   get 'employees/aboutus'
   get 'employees/contact'
-  # devise_for :users
-  root to: "employees#home"
+ get 'employees/jagadeesh'
+  root to: "employees#current"
   resources :employees do 
     member do
       get 'download_pdf'

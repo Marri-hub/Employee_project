@@ -4,6 +4,9 @@
         <%= menu_item "About Us", employees_aboutus_path %>
         <%= menu_item "Contact", employees_contact_path %>
         <%= menu_item "Employee Information", employees_path %>
+        <div style= "padding-left:820px; padding-top:18px;">
+        <%= menu_item current_user.email %>
+   </div>
     <% end %>
     <% end %>
 <br>
@@ -42,4 +45,5 @@
 </strong>
 </body>
 </html>
+
 

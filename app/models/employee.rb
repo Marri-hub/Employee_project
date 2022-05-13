@@ -10,17 +10,15 @@ class Employee < ApplicationRecord
         end
         validate :check_name
         
-        def change_name
-        name == 'navya'
-        end
+        
         validates:name,exclusion: {in:['karthik','sai'], message: 'This name cannot be added'}
-        validates :department,presence: true , unless: :change_name
+        validates :department,presence: true 
         validates :salary, presence: true, if: Proc.new{ |a| a.department.blank?}
         #after_initialize :method_after_intialization
         after_find :method_after_find
         after_touch :method_after_touch
         #before_save :method_before_save
-        #after_save :method_after_save
+        after_save :method_after_save
         around_save :method_around_save
         after_commit :method_after_commit, on: [:create]
         private
@@ -38,6 +36,7 @@ class Employee < ApplicationRecord
         #end
         def method_after_save
         puts "calling after save"
+       
         end
         def method_around_save
         puts "calling before save"
@@ -49,5 +48,5 @@ class Employee < ApplicationRecord
         end
 
 
-    has_one_attached :main_image
+    has_one_attached :upload_image
 end
